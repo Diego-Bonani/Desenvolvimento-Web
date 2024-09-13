@@ -1,0 +1,13 @@
+html {  
+    font-family: "Playfair Display", system-ui;
+    font-size: 14px;
+}
+
+#meu-h1{
+    font-size: 2rem;
+}
+
+div {
+    background-color: aquamarine;
+}
+
