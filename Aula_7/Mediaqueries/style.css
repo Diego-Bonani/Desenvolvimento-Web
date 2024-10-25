@@ -1,0 +1,39 @@
+#minha-div {
+    width: 80%;
+    margin: 0 auto;
+    height: 50vh;
+    background-color: brown;
+}
+
+#div2{
+    display: none;
+    background-color: blanchedalmond;
+    margin: 0 auto;
+    width: 80%;
+    height: 50vh;
+}
+
+@media screen and (min-width: 576px) {
+    #minha-div{
+        background-color: blue;
+        height: 20vh;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #minha-div{
+        background-color: chartreuse;
+        height: 70vh;
+    }
+    #div2 {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #minha-div{
+        background-color: violet;
+        height: 90vh;
+    }
+}
+
