@@ -11,6 +11,7 @@ const pega_json = async(caminho) => {
 
 const montaPagina = (dados) => {
     const body = document.body;
+    body.innerHTML = "";
 
     const nome = document.createElement('h1');
     nome.innerHTML = dados.nome
