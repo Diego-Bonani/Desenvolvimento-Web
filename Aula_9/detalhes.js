@@ -24,10 +24,33 @@ const montaPagina = (dados) => {
     const detalhes = document.createElement("p");
     detalhes.innerHTML = dados.detalhes;
     body.appendChild(detalhes);
+
+    const cookies = document.createElement('p');
+    cookies.innerHTML = document.cookie;
+    body.appendChild(cookies);
+}
+
+if (sessionStorage.getItem('Logado')){
+    pega_json(`https://botafogo-atletas.mange.li/2024-1/${id}`).then(
+        (r) => montaPagina(r)
+    );
+}
+else{
+    document.body.innerHTML = `<h1>Você precisa estar logado</h1>`
 }
 
 
 
-pega_json(`https://botafogo-atletas.mange.li/2024-1/${id}`).then(
-    (r) => montaPagina(r)
-)
+const achaCookie= ( chave ) => {
+    const lista = document.cookie.split("; ");
+    const par = lista.find(
+        ( e ) => e .startsWith(`${chave}=`)
+    );
+
+    return par.split("=")[1];
+}
+
+const dadosSessionStorage = sessionStorage.getItem('dados');
+const obj = JSON.parse(dadosSessionStorage);
+
+console.log('numero de jogos:', obj.nJogos)
